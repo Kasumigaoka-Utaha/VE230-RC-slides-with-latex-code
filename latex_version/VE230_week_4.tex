@@ -1,0 +1,117 @@
+\documentclass[xcolor={dvipsnames}]{beamer}
+\mode<presentation>
+{
+  \usetheme{Antibes}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{dolphin} % or try albatross, beaver, crane, ...
+  \usefonttheme{professionalfonts}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{color}
+\graphicspath{{/D:/fh/JI/latex/VE230 slides}}
+\usepackage{amsmath}
+\title[VE230 RC slides week 1]{VE230 RC slides Week 4}
+\author{han.fang }
+\date{\today}
+
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}{Overview}
+\begin{block}{Content}
+	\begin{itemize}
+		\item Electric Statistics
+		\item Capacitance and Capacitors
+		\item Boundary Conditions
+	\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}{Electric Displacement}
+\begin{itemize}
+  \item \textbf{electric flux density/electric displacement, $\vec{D}$}:
+  $$\vec{D} = \epsilon_0 \vec{E} + \vec{P} \quad (C/m^2)$$
+  \item $$\nabla\cdot \vec{D} = \rho \quad (C/m^3)$$, where $\rho$ is the volume density of free charges.
+  \item Another form of \textbf{Gauss's law}:
+  $$\oint_S \vec{D} \cdot d\vec{s} = Q \quad (\vec{C})$$,
+  the total outward flux of the electric displacement (the total outward electric flux) over any closed surface is equal to the total free charge enclosed in the surface.
+
+\end{itemize}
+\end{frame}
+\begin{frame}{Electric Displacement}
+\begin{itemize}
+  \item If the dielectric of the medium is \textbf{linear and isotropic},
+  $$\vec{P} = \epsilon_0 \chi_e \vec{E}$$
+  $$\vec{D} = \epsilon_0 (1+\chi_e)\vec{E} = \epsilon_0\epsilon_r\vec{E} = \epsilon\vec{E}$$,
+  where $\chi_e$ is a dimensionless quantity called electric susceptibility, 
+  
+  $\epsilon_r$ is a dimensionless quantity called as relative permittivity/ electric constant of the medium,
+  
+  $\epsilon$ is the absolute permittivity/permittivity of the medium $(F/m)$.
+\end{itemize}
+\end{frame}
+\begin{frame}{Boundary Conditions for Electrostatic Fields}
+\begin{itemize}
+  \item the tangential component of an $\vec{E}$ field is continuous across an interface.
+  $$E_{1t} = E_{2t} \quad (V/m)$$, or
+  $$\frac{D_{1t}}{\epsilon_1} = \frac{D_{2t}}{\epsilon_2}$$
+  \item The normal component of $\vec{D}$ field is discontinous across an interface where a surface charge exists - the amount of discontinuity being equal to the surface charge density. 
+  $$\vec{a_{n2}}\cdot(\vec{D_1} - \vec{D_2}) = \rho_s$$, or
+  $$D_{1n} - D_{2n} = \rho_s \quad (C/m^2)$$
+\end{itemize}
+\end{frame}
+\begin{frame}{Capacitance and Capacitors}
+\begin{block}{Definition}
+$$C=\frac{Q}{V}.$$
+\end{block}
+\pause
+\begin{block}{Series and Parallel}
+Series:
+$$C=\frac{1}{C_1}+\frac{1}{C_2}+...+\frac{1}{C_n}$$
+Parallel:
+$$C=\frac{1}{C_1}+\frac{1}{C_2}+...+\frac{1}{C_n}$$
+\end{block}
+\end{frame}
+\begin{frame}{Calculating the Capacitance}
+You can calculate the capacitance by the following steps:
+\begin{enumerate}
+	\item Choose a proper coordinate system.
+	\item Assume +Q, -Q on the conductors.
+	\item From \textbf{E} from Q.
+	\item Find $V_{12}=\int_2^1 \textbf{E}\cdot d\textbf{l}$
+	\item $C=Q/V_{12}$
+\end{enumerate}
+\end{frame}
+\begin{frame}{Capacitor System}
+Isolated Conductor System:
+$$Q_0+Q_1+...+Q_N=0.$$
+Self energy:
+$$W=Q_2V_2=Q_2\frac{Q_1}{4\pi\epsilon_0 R_{12}}.$$
+Mutual energy:
+$$W_e=\frac{1}{2}\sum_{k=1}^N Q_kV_k.$$
+\end{frame}
+\begin{frame}{Boundary Conditions}
+Poisson's Equation:
+$$\nabla^2 V=-\frac{\rho}{\epsilon}.$$
+In Cartesian System:
+$$\nabla^2 V=\frac{\partial^2 V}{\partial x^2}+\frac{\partial^2 V}{\partial y^2}+\frac{\partial^2 V}{\partial z^2}$$
+Laplace Equation:
+$$\nabla^2 V=0.$$
+Uniqueness Theorem: A solution of Poisson’s Equation or Laplace’s Equation that satisfies the given boundary conditions is a unique solution.
+\end{frame}
+\begin{frame}{Solution of Laplace Equations}
+There are three kinds of solutions for the equations: (discuss only about 2D situation) (The method to get the solution form can be learned in Vv557, taught by Horst)
+\begin{itemize}
+	\item $X=Ae^{-k_1x}+Be^{k_1x},\quad Y=Ce^{-k_2x}+De^{k_2x}$
+	\item $X=A\sin(k_1x)+B\cos(k_1x),\quad Y=C\sin(k_2x)+D\cos(k_2x)$
+	\item $X=a+bx,\quad Y=c+dx$
+\end{itemize}
+Method of Images: The method of images is just a method that try to satisfy the boundary conditions. If you are interested in it, you can ask me for 557 slides. :)
+\end{frame}
+
+\end{document}
